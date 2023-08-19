@@ -10,6 +10,15 @@
                 <span id="post1">This is my one and only blog post. Can you add more using a for loop?</span>
             </td>
         </tr>
+        {% if posts %}
+        {% for post in posts %}
+            <tr>
+                <td>
+                    <span id="{{ (posts.index(post)) + 1}}">{{ post.body }}</span>
+                </td>
+            </tr>
+        {% endfor %}
+        {% endif %}
     </table>
     <nav aria-label="...">
         <ul class="pager">
